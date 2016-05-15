@@ -6,12 +6,9 @@ import pip
 
 from pip.req import parse_requirements
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import find_packages, setup
 
-version = "1.7.1"
+version = "1.7.2"
 description = 'sms communication for churches, built with django'
 
 setup(name='apostello-cli',
@@ -21,7 +18,7 @@ setup(name='apostello-cli',
       author='monty5811',
       author_email='montgomery.dean97@gmail.com',
       url='https://github.com/monty5811/apostello-docker-cli',
-      packages=[],
+      packages=find_packages(exclude=['tests']),
       install_requires=[
           'click<0.7',
           'docker-compose>=1.7',
