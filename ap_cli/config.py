@@ -127,7 +127,7 @@ def config():
         config = prompt_for_update(config, 'WHITELISTED_LOGIN_DOMAINS:')
 
     # need to provide GUNICORN_MAX_REQUESTS:
-    click['GUNICORN_MAX_REQUESTS'] = 0
+    config['GUNICORN_MAX_REQUESTS'] = 0
     click.echo('')
     click.echo('Writing config to ".env" ...')
     save_config(config)
