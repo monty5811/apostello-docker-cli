@@ -42,6 +42,7 @@ def prompt_for_update(config, key):
     prompts = {
         'TWILIO_ACCOUNT_SID': 'Twilio account SID',
         'TWILIO_AUTH_TOKEN': 'Twilio auth token',
+        'TWILIO_FROM_NUM': 'The phone number you want to use (you need to buy one on Twilio)',
         'TWILIO_SENDING_COST':
         'Cost of sending messages in your country (see: https://www.twilio.com/sms/pricing)',
         'DJANGO_EMAIL_HOST': 'Email host',
@@ -82,6 +83,7 @@ def config():
     click.echo('First, we will setup Twilio so we can send SMS')
     config = prompt_for_update(config, 'TWILIO_ACCOUNT_SID')
     config = prompt_for_update(config, 'TWILIO_AUTH_TOKEN')
+    config = prompt_for_update(config, 'TWILIO_FROM_NUM')
     config = prompt_for_update(config, 'TWILIO_SENDING_COST')
     # email
     click.echo(
