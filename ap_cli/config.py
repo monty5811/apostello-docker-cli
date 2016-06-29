@@ -59,7 +59,7 @@ def prompt_for_update(config, key):
         'WHITELISTED_LOGIN_DOMAINS':
         'Comma separated list of domains (e.g. apostello.ninja,apostello.io)',
         'OPBEAT_APP_ID': 'Opbeat App ID:',
-        'OPBEAT_ORG_ID': 'Opbeat Org ID:',
+        'OPBEAT_ORGANIZATION_ID': 'Opbeat Org ID:',
         'OPBEAT_SECRET_TOKEN': 'Opbeat scret token',
         'OPBEAT_JS_APP_ID': 'Opbeat app ID',
         'OPBEAT_JS_ORG_ID': 'Opbeat org ID',
@@ -108,11 +108,11 @@ def config():
     # opbeat
     if click.confirm(
             'Do you want to track backend apostello errors with opbeat?'):
-        config = prompt_for_update(config, 'OPBEAT_ORG_ID')
+        config = prompt_for_update(config, 'OPBEAT_ORGANIZATION_ID')
         config = prompt_for_update(config, 'OPBEAT_APP_ID')
         config = prompt_for_update(config, 'OPBEAT_SECRET_TOKEN')
     else:
-        config.pop('OPBEAT_ORG_ID', None)
+        config.pop('OPBEAT_ORGANIZATION_ID', None)
         config.pop('OPBEAT_APP_ID', None)
         config.pop('OPBEAT_SECRET_TOKEN', None)
     if click.confirm(
