@@ -8,7 +8,7 @@ from pip.req import parse_requirements
 
 from setuptools import find_packages, setup
 
-version = "0.1.3"
+version = "1.10.0"
 description = 'sms communication for churches, built with django'
 
 setup(name='apostello-cli',
